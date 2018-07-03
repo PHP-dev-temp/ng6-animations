@@ -1,9 +1,13 @@
 <h1>Posts</h1>
 
 <ul>
-  <li *ngFor="let post of posts$">
-    <a routerLink="">{{ post.title }}</a>
+  <li *ngFor="let post of posts"
+      [@postState]="post.state"
+      (mouseenter)="post.state = 'active'"
+      (mouseleave)="post.state = 'inactive'">
+    <h3>{{ post.title }}</h3>
 
     <p>{{ post.body }}</p>
+    <p>{{ post.state }}</p>
   </li>
 </ul>

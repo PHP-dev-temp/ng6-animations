@@ -1,7 +1,6 @@
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
-//import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -37,13 +36,13 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class UsersComponent implements OnInit {
 
   users$: Object;
-  
+
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getUsers()
     .subscribe(
-      data => this.users$ = data 
+      data => this.users$ = data
     );
   }
 
